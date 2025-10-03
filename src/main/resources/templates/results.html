@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Scholar results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Founded articles</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>title</th>
+        <th>authors</th>
+        <th>publication date</th>
+        <th>abstract</th>
+        <th>link</th>
+        <th>keywords</th>
+        <th>cited by</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${results}">
+        <td th:text="${article.title}">title</td>
+        <td th:text="${article.authors}">Authors</td>
+        <td th:text="${article.publicationDate}">date</td>
+        <td th:text="${article.abstractText, 200}">abstract</td>
+        <td><a th:href="${article.link}" th:text="${article.link}">link</a></td>
+        <td th:text="${article.keywords}">keywords</td>
+        <td th:text="${article.citedBy}">cited by</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
