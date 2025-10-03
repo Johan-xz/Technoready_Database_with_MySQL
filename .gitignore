@@ -4,8 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-# Evitar subir configuración sensible
-src/main/resources/application.properties
+
 ### STS ###
 .apt_generated
 .classpath
@@ -36,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar configuración sensible de Spring Boot
+src/main/resources/application.properties

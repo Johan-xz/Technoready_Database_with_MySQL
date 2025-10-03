@@ -47,7 +47,7 @@ public class ScholarClient {
             }
 
         } catch (Exception e){
-            System.err.println("Error al consultar SerpApi: " + e.getMessage());
+            System.err.println("Connection error with SerpApi: " + e.getMessage());
         }
         return results;
     }

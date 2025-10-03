@@ -19,8 +19,8 @@ public class ScholarService {
         this.repository = repository;
     }
     public List<ScholarArticle> fetchAndSaveArticles(String query){
-        List<ScholarArticleDto> dtos = scholarClient.searchArticles(query);
-        List<ScholarArticle> entities = dtos.stream()
+        List<ScholarArticleDto> dto = scholarClient.searchArticles(query);
+        List<ScholarArticle> entities = dto.stream()
                 .map(this::mapToEntity)
                 .collect(Collectors.toList());
 
