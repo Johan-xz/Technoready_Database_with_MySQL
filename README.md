@@ -15,5 +15,9 @@ teams in automating literature reviews, citation tracking, and metadata extracti
 - Citation tracking for grant applications or academic audits.
 - Integration into consulting deliverables requiring scholarly references.
 
+## V1.0.0 commit 3 
+There's some issues with the dependencies so i couldn't start documentation but in **HELP.md** there is some 
+tutorials for the dependency 
+
 
 
