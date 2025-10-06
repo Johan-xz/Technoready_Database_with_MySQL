@@ -2,14 +2,20 @@ package com.consulting_scholar.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "Scholar_article")
 public class ScholarArticle {
+    /**
+     * x
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String authors;
+    private List<String> authors;
     private String publicationDate;
     @Column(length = 2000)
     private String abstractText;
@@ -36,11 +42,11 @@ public class ScholarArticle {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getAuthors() {
+    public List<String> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(String authors) {
+    public void setAuthors(List<String> authors) {
         this.authors = authors;
     }
 

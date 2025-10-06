@@ -10,6 +10,12 @@ import java.util.List;
 
 @Controller
 public class ScholarController {
+    /**
+     * In this class are the methods Get
+     * the first one with "/" is to redirect to the search
+     * the second is for make acccess to search and
+     * The last two are for redirect to results with a table
+     */
     private final ScholarService scholarService;
 
     public ScholarController(ScholarService scholarService){
@@ -23,9 +29,10 @@ public class ScholarController {
     public String showSearchForm(){
         return "search";
     }
-    // Manejo directo por GET (recomendado para búsquedas)
+
     @GetMapping("/results")
     public String showResults(@RequestParam(name = "query", required = false) String query, Model model) {
+        System.out.println("Received query: " + query); // Simple log
         List<ScholarArticle> articles = (query == null || query.isBlank())
                 ? scholarService.getAllArticles()
                 : scholarService.fetchAndSaveArticles(query);
@@ -35,7 +42,7 @@ public class ScholarController {
     }
     @GetMapping("/all")
     public String showAllArticles(Model model){
-        List<ScholarArticle> articles =scholarService.getAllArticles();
+        List<ScholarArticle> articles = scholarService.getAllArticles();
         model.addAttribute("results", articles);
         return "results";
     }

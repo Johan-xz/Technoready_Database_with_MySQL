@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Google Scholar results</title>
@@ -41,7 +41,7 @@
     <tbody>
     <tr th:each="article : ${results}">
         <td th:text="${article.title}">title</td>
-        <td th:text="${article.authors}">Authors</td>
+        <td th:text="${#lists.join(article.authors, ', ')}">Authors</td>
         <td th:text="${article.publicationDate}">date</td>
         <td th:text="${article.abstractText, 200}">abstract</td>
         <td><a th:href="${article.link}" th:text="${article.link}">link</a></td>

@@ -5,15 +5,15 @@
     <title>Search academic articles</title>
 </head>
 <body>
-<h1>Query for academic articles</h1>
+<h1>Put some query as a researcher or a topic</h1>
 
-<form th:action="@{/scholar/results}" method="post">
-    <label for="query">Palabra clave o autor:</label>
+<form th:action="@{/results}" method="get">
+    <label for="query">Topic or researcher:</label>
     <input type="text" id="query" name="query" required placeholder="Ex. urban flood mitigation">
-    <button type="submit">Buscar</button>
+    <button type="submit">Search</button>
 </form>
 
 <br>
-<a th:href="@{/scholar/all}">See all my save academic articles</a>
+<a th:href="@{/all}">See all my save academic articles</a>
 </body>
 </html>
