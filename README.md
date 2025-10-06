@@ -32,6 +32,10 @@ The flow structure is:
     -     }
   -     }
 -      }
+## V1.0.1
+in this version there's some issues like no communicate with the endpoint (results.html) but the information cames to 
+MySQL and stores in the database.
 
+![database storage](assets/databasestorage.png)
 
 
